@@ -1,5 +1,12 @@
-build/hello_world: hello_world.o
-	ld -macos_version_min 14.0.0 -o build/hello_world hello_world.o -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -e _start -arch arm64
+.PHONY: all
 
-hello_world.o: hello_world.asm
-	as hello_world.asm -o hello_world.o
+all: build/hello_world
+
+run: build/hello_world
+	./build/hello_world
+
+build/hello_world: build/hello_world.o
+	ld -macos_version_min 14.0.0 -o build/hello_world build/hello_world.o -lSystem -syslibroot `xcrun -sdk macosx --show-sdk-path` -e _start -arch arm64
+
+build/hello_world.o: hello_world.asm
+	as hello_world.asm -o build/hello_world.o
