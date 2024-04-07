@@ -33,7 +33,6 @@ _start:
 helloworld:     .asciz  "Hello World!"
 othermessage:   .asciz  "This is Apple Silicon ASM!\n"
 cake:           .asciz  "The cake is a lie!\n"
-newline:        .asciz  "\n"
 question:       .asciz  "What is your name?: "
 helloyou:       .asciz  "Hello, "
 

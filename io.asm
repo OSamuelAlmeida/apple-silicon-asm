@@ -55,3 +55,5 @@ _readln:
 
     ldp X29, X30, [SP], #16
     ret
+
+newline: .asciz "\n"
